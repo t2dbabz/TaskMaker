@@ -5,4 +5,8 @@
     <string name="priority_task">Priority Task</string>
     <string name="task_title_edit_text_hint">What Needs to Get Done?</string>
     <string name="add_task">add task</string>
+    <string name="settings">Settings</string>
+    <string name="save">Save</string>
+    <string name="set_alarm">set alarm</string>
+    <string name="delete_task">delete task</string>
 </resources>
