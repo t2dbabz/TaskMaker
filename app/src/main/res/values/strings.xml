@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">TaskMaker</string>
+    <string name="due_date_not_set">Not Set</string>
+    <string name="due_date_label">Due Date</string>
+    <string name="priority_task">Priority Task</string>
+    <string name="task_title_edit_text_hint">What Needs to Get Done?</string>
+    <string name="add_task">add task</string>
 </resources>
