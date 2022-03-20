@@ -11,9 +11,11 @@
         android:theme="@style/Theme.TaskMaker">
         <activity
             android:name=".ui.add.AddTaskActivity"
+            android:parentActivityName=".ui.main.MainActivity"
             android:exported="false" />
         <activity
             android:name=".ui.detail.DetailTaskActivity"
+            android:parentActivityName=".ui.main.MainActivity"
             android:exported="false" />
         <activity
             android:name=".ui.main.MainActivity"

@@ -8,6 +8,9 @@
         <entry key="..\:/Users/tunde/AndroidBasicsProject/TaskMaker/app/src/main/res/layout/activity_detail_task.xml" value="0.33" />
         <entry key="..\:/Users/tunde/AndroidBasicsProject/TaskMaker/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/tunde/AndroidBasicsProject/TaskMaker/app/src/main/res/layout/task_list_item.xml" value="0.25" />
+        <entry key="..\:/Users/tunde/AndroidBasicsProject/TaskMaker/app/src/main/res/menu/add_task_screen_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/tunde/AndroidBasicsProject/TaskMaker/app/src/main/res/menu/details_screen_menu.xml" value="0.25" />
+        <entry key="..\:/Users/tunde/AndroidBasicsProject/TaskMaker/app/src/main/res/menu/main_screen_menu.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>
