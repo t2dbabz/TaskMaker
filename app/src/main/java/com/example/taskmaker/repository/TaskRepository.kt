@@ -13,6 +13,12 @@ class TaskRepository(private val taskDao: TaskDao) {
         const val PAGE_SIZE = 30
         const val PLACEHOLDERS = true
 
+        private val PAGING_CONFIG = PagedList.Config.Builder().apply {
+            setEnablePlaceholders(PLACEHOLDERS)
+            setPageSize(PAGE_SIZE)
+        }.build()
+
+
         @Volatile
         private var instance: TaskRepository? = null
 
@@ -28,28 +34,22 @@ class TaskRepository(private val taskDao: TaskDao) {
         }
     }
 
-    fun getAllTasks() : LiveData<PagingData<Task>> {
+    fun getAllTasks() : LiveData<PagedList<Task>> {
         val config = PagingConfig(pageSize = PAGE_SIZE, enablePlaceholders = PLACEHOLDERS)
         val pagingSource = taskDao.getAllTask()
-        return Pager(config) {
-            pagingSource
-        }.liveData
+        return LivePagedListBuilder(pagingSource, PAGING_CONFIG).build()
     }
 
-    fun getCompletedTasks() : LiveData<PagingData<Task>> {
+    fun getCompletedTasks() : LiveData<PagedList<Task>> {
         val config = PagingConfig(pageSize = PAGE_SIZE, enablePlaceholders = PLACEHOLDERS)
         val pagingSource = taskDao.getCompletedTasks()
-        return Pager(config) {
-            pagingSource
-        }.liveData
+        return LivePagedListBuilder(pagingSource, PAGING_CONFIG).build()
     }
 
-    fun getActiveTasks() : LiveData<PagingData<Task>> {
+    fun getActiveTasks() : LiveData<PagedList<Task>> {
         val config = PagingConfig(pageSize = PAGE_SIZE, enablePlaceholders = PLACEHOLDERS)
         val pagingSource = taskDao.getActiveTasks()
-        return Pager(config) {
-            pagingSource
-        }.liveData
+        return LivePagedListBuilder(pagingSource, PAGING_CONFIG).build()
     }
 
     fun getTaskById(taskId: Int): LiveData<Task> {

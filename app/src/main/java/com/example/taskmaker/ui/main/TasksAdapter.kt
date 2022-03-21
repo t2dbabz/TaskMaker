@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.paging.PagedList
+import androidx.paging.PagedListAdapter
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -19,8 +21,8 @@ import com.example.taskmaker.util.DateConverter
 import com.example.taskmaker.util.TASK_ID
 
 class TasksAdapter(
-    private val onCheckBoxClicked: (Task, Boolean) -> Unit
-): PagingDataAdapter<Task, TasksAdapter.TaskViewHolder>(DIFF_CALLBACK) {
+    private val onCheckBoxClicked: (Task) -> Unit
+): PagedListAdapter<Task, TasksAdapter.TaskViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
         return TaskViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.task_list_item, parent, false))
@@ -63,7 +65,14 @@ class TasksAdapter(
             priority.setImageResource(if (task.isPriority) R.drawable.ic_priority_yes else R.drawable.ic_priority_no)
 
             isCompleteCheckBox.setOnClickListener {
-                onCheckBoxClicked(task, !task.isCompleted)
+                val updateTask = Task(
+                    id = task.id,
+                    taskTitle = task.taskTitle,
+                    isCompleted = !task.isCompleted,
+                    isPriority = task.isPriority,
+                    dueDateMillis = task.dueDateMillis
+                )
+                onCheckBoxClicked(updateTask)
             }
 
         }

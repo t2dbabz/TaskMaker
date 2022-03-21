@@ -11,13 +11,13 @@ import com.example.taskmaker.model.Task
 interface TaskDao {
 
     @Query("SELECT * FROM tasks")
-    fun getAllTask(): PagingSource<Int, Task>
+    fun getAllTask(): DataSource.Factory<Int, Task>
 
     @Query("SELECT * FROM tasks WHERE isCompleted = 1")
-    fun getCompletedTasks(): PagingSource<Int, Task>
+    fun getCompletedTasks(): DataSource.Factory<Int, Task>
 
     @Query("SELECT * FROM tasks WHERE isCompleted = 0")
-    fun getActiveTasks(): PagingSource<Int, Task>
+    fun getActiveTasks(): DataSource.Factory<Int, Task>
 
     @Query("SELECT * FROM tasks WHERE id = :taskId")
     fun getTaskById(taskId: Int) : LiveData<Task>

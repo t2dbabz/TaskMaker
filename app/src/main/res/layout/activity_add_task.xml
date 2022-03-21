@@ -33,6 +33,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:enabled="true"
         android:text="@string/priority_task"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="@android:color/black"
@@ -52,7 +53,7 @@
         app:layout_constraintTop_toBottomOf="@+id/priority_switch" />
 
     <TextView
-        android:id="@+id/due_date"
+        android:id="@+id/due_date_textView"
         style="@style/TextAppearance.AppCompat.Medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
