@@ -7,8 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".ui.detail.DetailTaskActivity">
 
-    <TextView
-        android:id="@+id/task_title"
+    <com.example.taskmaker.ui.main.TaskTitleView
+        android:id="@+id/task_detail_title"
         style="@style/TextAppearance.AppCompat.Large"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,23 +19,24 @@
         tools:text="This is a new task" />
 
     <TextView
-        android:id="@+id/due_date"
+        android:id="@+id/task_detail_due_date"
         style="@style/TextAppearance.AppCompat.Medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        app:layout_constraintStart_toStartOf="@+id/task_title"
-        app:layout_constraintTop_toBottomOf="@+id/task_title"
+        app:layout_constraintStart_toStartOf="@+id/task_detail_title"
+        app:layout_constraintTop_toBottomOf="@+id/task_detail_title"
         tools:text="Due Date Mar 20" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/detail_task_priority"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_priority_yes" />
+        tools:srcCompat="@drawable/ic_priority_yes"
+        android:contentDescription="@string/priority_task"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
