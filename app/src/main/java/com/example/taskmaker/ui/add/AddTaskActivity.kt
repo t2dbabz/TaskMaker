@@ -1,10 +1,12 @@
 package com.example.taskmaker.ui.add
 
+import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.webkit.WebSettings
+import android.widget.DatePicker
 import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
@@ -13,14 +15,19 @@ import com.example.taskmaker.model.Task
 import com.example.taskmaker.ui.ViewModelFactory
 import com.google.android.material.switchmaterial.SwitchMaterial
 import com.google.android.material.textfield.TextInputEditText
+import java.text.SimpleDateFormat
+import java.util.*
 
-class AddTaskActivity : AppCompatActivity() {
+class AddTaskActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
     private lateinit var viewModel: AddTaskViewModel
     private lateinit var taskTitle: TextInputEditText
     private lateinit var prioritySwitch: SwitchMaterial
     private lateinit var dueDateTextView: TextView
     private  var dueDateInMillis: Long? = null
     var isPriorityChecked = false
+    var day = 0
+    var month: Int = 0
+    var year: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,9 +39,6 @@ class AddTaskActivity : AppCompatActivity() {
 
         initializeViews()
 
-
-
-
     }
 
     private fun initializeViews() {
@@ -45,6 +49,18 @@ class AddTaskActivity : AppCompatActivity() {
         prioritySwitch.setOnCheckedChangeListener { _, isChecked ->
             isPriorityChecked = isChecked
         }
+
+        dueDateTextView.setOnClickListener {
+            val calendar: Calendar = Calendar.getInstance()
+            day = calendar.get(Calendar.DAY_OF_MONTH)
+            month = calendar.get(Calendar.MONTH)
+            year = calendar.get(Calendar.YEAR)
+            val datePickerDialog =
+                DatePickerDialog(this, this, year, month,day)
+            datePickerDialog.show()
+        }
+
+
     }
 
     private fun addNewTask() {
@@ -59,7 +75,7 @@ class AddTaskActivity : AppCompatActivity() {
 
             finish()
         } else {
-            Toast.makeText(this, "Task title is Empty", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Task title is required", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -79,5 +95,15 @@ class AddTaskActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
 
+    }
+
+    override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
+        val calendar = Calendar.getInstance()
+        calendar.set(year, month, dayOfMonth)
+
+        val dateFormat = SimpleDateFormat("dd MMM", Locale.getDefault())
+        dueDateTextView.text = dateFormat.format(calendar.time)
+
+        dueDateInMillis = calendar.timeInMillis
     }
 }
