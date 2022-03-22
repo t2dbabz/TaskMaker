@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/tunde/AndroidBasicsProject/TaskMaker/app/src/main/res/drawable/ic_priority_no.xml" value="0.1" />
+        <entry key="..\:/Users/tunde/AndroidBasicsProject/TaskMaker/app/src/main/res/drawable/ic_priority_yes.xml" value="0.1" />
         <entry key="..\:/Users/tunde/AndroidBasicsProject/TaskMaker/app/src/main/res/layout/activity_add_task.xml" value="0.25" />
         <entry key="..\:/Users/tunde/AndroidBasicsProject/TaskMaker/app/src/main/res/layout/activity_detail_task.xml" value="0.33" />
         <entry key="..\:/Users/tunde/AndroidBasicsProject/TaskMaker/app/src/main/res/layout/activity_main.xml" value="0.25" />

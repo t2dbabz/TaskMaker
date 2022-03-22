@@ -9,4 +9,5 @@
     <string name="save">Save</string>
     <string name="set_alarm">set alarm</string>
     <string name="delete_task">delete task</string>
+    <string name="task_detail_due_date">Due Date: &#160; %1$s</string>
 </resources>
