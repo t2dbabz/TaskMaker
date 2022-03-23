@@ -2,7 +2,6 @@ package com.example.taskmaker.database
 
 import androidx.lifecycle.LiveData
 import androidx.paging.DataSource
-import androidx.paging.PagingSource
 import androidx.room.*
 import com.example.taskmaker.model.Task
 
@@ -21,6 +20,10 @@ interface TaskDao {
 
     @Query("SELECT * FROM tasks WHERE id = :taskId")
     fun getTaskById(taskId: Int) : LiveData<Task>
+
+    @Query("SELECT * FROM tasks WHERE isCompleted = 0 LIMIT 6")
+    fun getNearestActiveTasks(): List<Task>
+
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertTask(task: Task)

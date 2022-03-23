@@ -35,21 +35,22 @@ class TaskRepository(private val taskDao: TaskDao) {
     }
 
     fun getAllTasks() : LiveData<PagedList<Task>> {
-        val config = PagingConfig(pageSize = PAGE_SIZE, enablePlaceholders = PLACEHOLDERS)
         val pagingSource = taskDao.getAllTask()
         return LivePagedListBuilder(pagingSource, PAGING_CONFIG).build()
     }
 
     fun getCompletedTasks() : LiveData<PagedList<Task>> {
-        val config = PagingConfig(pageSize = PAGE_SIZE, enablePlaceholders = PLACEHOLDERS)
         val pagingSource = taskDao.getCompletedTasks()
         return LivePagedListBuilder(pagingSource, PAGING_CONFIG).build()
     }
 
     fun getActiveTasks() : LiveData<PagedList<Task>> {
-        val config = PagingConfig(pageSize = PAGE_SIZE, enablePlaceholders = PLACEHOLDERS)
         val pagingSource = taskDao.getActiveTasks()
         return LivePagedListBuilder(pagingSource, PAGING_CONFIG).build()
+    }
+
+    fun getNearestActiveTask(): List<Task> {
+        return  taskDao.getNearestActiveTasks()
     }
 
     fun getTaskById(taskId: Int): LiveData<Task> {
