@@ -56,6 +56,7 @@ class DailyReminderWorker(context: Context, workerParams: WorkerParameters): Cor
 
         val intent = Intent(applicationContext, MainActivity::class.java)
 
+
         val contentPendingIntent = PendingIntent.getActivity(
             applicationContext,
             TaskReminder.TASK_REMINDER_NOTIF_REQUEST_CODE,

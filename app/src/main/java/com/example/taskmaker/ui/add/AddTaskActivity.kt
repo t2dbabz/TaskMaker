@@ -75,7 +75,7 @@ class AddTaskActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener 
 
             finish()
         } else {
-            Toast.makeText(this, "Task title is required", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.empty_task_title_message), Toast.LENGTH_SHORT).show()
         }
     }
 

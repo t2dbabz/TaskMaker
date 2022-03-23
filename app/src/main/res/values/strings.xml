@@ -23,4 +23,6 @@
     <string name="active_tasks">Active Tasks</string>
     <string name="completed_tasks">Completed Tasks</string>
     <string name="filter_task">filter task</string>
+    <string name="empty_task_title_message">Task title is required</string>
+    <string name="reminder_set">Reminder Set</string>
 </resources>

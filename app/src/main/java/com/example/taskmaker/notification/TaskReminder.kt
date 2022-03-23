@@ -47,7 +47,12 @@ class TaskReminder(): BroadcastReceiver() {
         extras.putLong(TASK_DUE_DATE, task.dueDateMillis)
         intent.putExtras(extras)
 
-        val pendingIntent = PendingIntent.getBroadcast(context, TASK_REMINDER_ID, intent, 0)
+        val pendingIntent = PendingIntent.getBroadcast(
+            context,
+            TASK_REMINDER_ID,
+            intent,
+            PendingIntent.FLAG_UPDATE_CURRENT
+        )
 
         alarmManager.setExact(AlarmManager.RTC_WAKEUP, reminderTime, pendingIntent )
 

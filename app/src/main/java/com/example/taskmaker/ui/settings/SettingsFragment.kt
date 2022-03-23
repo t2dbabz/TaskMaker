@@ -17,13 +17,11 @@ class SettingsFragment : PreferenceFragmentCompat() {
         val themeMode = preferenceManager.findPreference<Preference>(getString(R.string.pref_key_theme)) as ListPreference
 
         themeMode.setOnPreferenceChangeListener { _ , newValue ->
-            Toast.makeText(context, newValue.toString(), Toast.LENGTH_SHORT).show()
 
-            var mode: Int
-            when (newValue){
-                "on" ->  mode = MODE_NIGHT_YES
-                "off"->  mode = MODE_NIGHT_NO
-                else ->  mode =MODE_NIGHT_FOLLOW_SYSTEM
+            val mode: Int = when (newValue){
+                "on" -> MODE_NIGHT_YES
+                "off"-> MODE_NIGHT_NO
+                else -> MODE_NIGHT_FOLLOW_SYSTEM
             }
             updateTheme(mode)
             true

@@ -149,7 +149,7 @@ class DetailTaskActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListen
             taskReminder.setTaskReminder(context, task, reminderTime)
             Toast.makeText(
                 this,
-                "Reminder Set",
+                getString(R.string.reminder_set),
                 Toast.LENGTH_LONG
             ).show()
         }
