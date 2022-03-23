@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="theme_mode">
+        <item>@string/theme_automatic_label</item>
+        <item>@string/theme_dark_mode_label</item>
+        <item>@string/theme_light_mode_label</item>
+    </string-array>
+
+    <string-array name="dark_mode_value">
+        <item>@string/pref_theme_auto</item>
+        <item>@string/pref_theme_dark_mode_on</item>
+        <item>@string/pref_theme_dark_mode_off</item>
+    </string-array>
+</resources>

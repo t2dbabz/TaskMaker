@@ -10,4 +10,13 @@
     <string name="set_alarm">set alarm</string>
     <string name="delete_task">delete task</string>
     <string name="task_detail_due_date">Due Date: &#160; %1$s</string>
+    <string name="theme_header">Theme</string>
+    <string name="pref_theme_title">Theme mode</string>
+    <string name="pref_key_theme" translatable="false">key_theme_mode</string>
+    <string name="pref_theme_auto" translatable="false">auto</string>
+    <string name="pref_theme_dark_mode_on" translatable="false">on</string>
+    <string name="pref_theme_dark_mode_off" translatable="false">off</string>
+    <string name="theme_automatic_label">Automatic</string>
+    <string name="theme_dark_mode_label">Dark mode</string>
+    <string name="theme_light_mode_label">Light mode</string>
 </resources>

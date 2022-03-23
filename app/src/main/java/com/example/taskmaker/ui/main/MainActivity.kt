@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -11,6 +12,7 @@ import com.example.taskmaker.R
 import com.example.taskmaker.ui.ViewModelFactory
 import com.example.taskmaker.ui.add.AddTaskActivity
 import com.example.taskmaker.ui.detail.DetailTaskActivity
+import com.example.taskmaker.ui.settings.SettingsActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
@@ -50,6 +52,21 @@ class MainActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main_screen_menu, menu)
         return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId) {
+
+            R.id.settings -> {
+                val intent = Intent(this, SettingsActivity::class.java)
+                startActivity(intent)
+                true
+            }
+
+            else -> super.onOptionsItemSelected(item)
+
+        }
+
     }
 
 
