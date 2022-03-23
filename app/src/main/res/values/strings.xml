@@ -19,4 +19,8 @@
     <string name="theme_automatic_label">Automatic</string>
     <string name="theme_dark_mode_label">Dark mode</string>
     <string name="theme_light_mode_label">Light mode</string>
+    <string name="all_tasks">All Tasks</string>
+    <string name="active_tasks">Active Tasks</string>
+    <string name="completed_tasks">Completed Tasks</string>
+    <string name="filter_task">filter task</string>
 </resources>

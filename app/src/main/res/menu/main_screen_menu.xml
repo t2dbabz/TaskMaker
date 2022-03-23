@@ -3,11 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:title="@string/filter_task"
         android:id="@+id/action_filter_task"
-        android:title="filter task"
         android:icon="@drawable/ic_filter_list"
-        app:showAsAction="always"
-        />
+        app:showAsAction="always">
+
+    </item>
 
     <item android:title="@string/settings"
         android:id="@+id/settings"

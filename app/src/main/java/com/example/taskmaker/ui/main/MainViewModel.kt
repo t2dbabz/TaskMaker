@@ -36,4 +36,8 @@ class MainViewModel(private val repository: TaskRepository) : ViewModel() {
             repository.updateTask(task  )
         }
     }
+
+    fun updateFilter(filter: TasksFilter) {
+        _filter.value = filter
+    }
 }
