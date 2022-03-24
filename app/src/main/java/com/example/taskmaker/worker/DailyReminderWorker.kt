@@ -69,6 +69,8 @@ class DailyReminderWorker(context: Context, workerParams: WorkerParameters): Cor
                 .setStyle(notificationStyle)
                 .setSmallIcon(R.drawable.ic_launcher_foreground)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setContentTitle("Daily Task Reminder")
+                .setContentText("You have ${tasks.size} Active Tasks")
                 .setContentIntent(contentPendingIntent)
                 .setAutoCancel(true)
 
