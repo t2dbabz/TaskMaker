@@ -5,15 +5,18 @@ I used the Exam past question in this [article](https://medium.com/@suyoggunjal/
 
 ## Topics 
 - UI — (Constraint Layout etc.)
+- Widgets like Checkbox, Time Picker and Date Picker
 - RecyclerView, Pagination Library
 - Menu 
 - LiveData and ViewModel
 - Activity, Fragment Transactions
 - MVVM Architecture (Repository Pattern)
-- Room DB, Sorting
+- Room Database, Sorting Query
 - Notifications (In-App)
 - Alarm Manager and Work Manager
 - Shared Preferences and Settings Preferences 
+- App Settings for light and dark theme
+- Debugging
 - Unit Test Cases and UI Test Cases (Espresso)
 
 ## Prerequisite
